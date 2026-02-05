@@ -17,5 +17,10 @@ def send(msg):
     send_length+= b' '*(HEADER - len(send_length))
     client.send(send_length)
     client.send(message)
+    
+def Disconnect():
+    send(DISCONNECT_MESSAGE)
+    client.close()
 
-send("HELLO WORLD")
+send("HELLO WORLD") 
+Disconnect()
